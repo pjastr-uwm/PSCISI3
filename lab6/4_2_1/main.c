@@ -23,10 +23,10 @@ int main()
     int tab[] = {3,4,5,6,-3};
     int tab2[] = {3,-4};
     wyswietlTablice(5, tab);
-    wyswietlTablice(3, tab2);
+    wyswietlTablice(2, tab2);
     fooa(5,tab);
     fooa(2,tab2);
     wyswietlTablice(5, tab);
-    wyswietlTablice(3, tab2);
+    wyswietlTablice(2, tab2);
     return 0;
 }
