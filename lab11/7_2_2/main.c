@@ -6,16 +6,25 @@ struct trojkat
     float a,b,c;
 };
 
-float obwod(struct trojkat arg);
+void foo(struct trojkat troj1, struct trojkat *troj2)
+{
+    *troj2=troj1;
+}
 
 int main()
 {
     struct trojkat tr = {3,4,5};
-    printf("%f\n", obwod(tr));
+    printf("%f %f %f\n", tr.a, tr.b, tr.c);
+    struct trojkat * wsk = malloc(sizeof(struct trojkat));
+    wsk->a = 4;
+    wsk->b = -34;
+    wsk->c = 11;
+    printf("%f %f %f\n", wsk->a, wsk->b, wsk->c);
+    foo(tr, wsk);
+    printf("%f %f %f\n", wsk->a, wsk->b, wsk->c);
+    wsk->b = 100;
+    printf("%f %f %f\n", tr.a, tr.b, tr.c);
+    printf("%f %f %f\n", wsk->a, wsk->b, wsk->c);
     return 0;
 }
 
-float obwod(struct trojkat arg)
-{
-    return arg.a + arg.b + arg.c;
-}
